@@ -1,0 +1,85 @@
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+body {
+	background-color: #515765;
+	font: 62.5% Roboto;
+	margin: 0;
+	padding: 0 
+}
+
+h2, p {
+	margin: 0;
+	padding: 0
+}
+
+#coderbits {
+	margin: 50px auto;
+	padding: 0 10px;
+	width: 300px
+}
+
+#coderbits #profile {
+	background-color: #29ace4;
+	box-shadow: 0 0 5px 0 #ccc;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+}
+
+#coderbits #profile-username {
+	font-size: 1.4em
+}
+
+#coderbits #profile-title {
+	font-size: 1.2em
+}
+
+#coderbits #profile-image {
+	border-radius: 50%;
+	display: block;
+	margin: 0 auto
+}
+
+#coderbits #badges {
+	background-color: #fff;
+	box-shadow: 0 0 5px 0 #ccc;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	padding: 20px 0;
+	text-align: center;
+}
+
+#coderbits #badges:before,
+#coderbits #badges:after {
+    content: " ";
+    display: table;
+}
+
+#coderbits #badges:after {
+    clear: both;
+}
+
+#coderbits .badge-image {
+	float: left;
+	margin: 5px 7px
+}
+
+#coderbits .badge-image:nth-child(3n+3) {
+	margin-right: 0
+}
+
+#coderbits .badge-image img {
+	height: 80px;
+	width: 80px
+}
+
+#coderbits #more {
+	color: #29ace4;
+	font-size: 1.3em;
+}
