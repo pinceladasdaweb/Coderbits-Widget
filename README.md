@@ -1,5 +1,7 @@
-Coderbits Widget
+# Coderbits Widget
 > Coderbits Widget developed with Vanilla JS
+
+![](https://raw.githubusercontent.com/pinceladasdaweb/Coderbits-Widget/master/screenshot.png
 
 ## How to use?
 Coderbits Widget is a [Vanilla JS](http://vanilla-js.com/) plugin with no dependancies. Include the [`coderbits.min.js`](assets/js/coderbits.min.js) in the footer of your page and initialise it:
