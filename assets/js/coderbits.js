@@ -117,7 +117,7 @@ var Coderbits = (function (window, document, undefined) {
             self.loop(data.badges, function (badge) {
                 if (badge.earned) {
                     if(count < 12 && badge.level === 1) {
-                        div.appendChild(self.badges(badge));
+                        div.appendChild(self.badges(badge).cloneNode(true));
                         count++;
                     }
                 }
