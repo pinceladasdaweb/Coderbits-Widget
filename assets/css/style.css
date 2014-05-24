@@ -4,6 +4,8 @@
             box-sizing: border-box;
 }
 
+section, header { display: block; }
+
 body {
 	background-color: #515765;
 	font: 62.5% Roboto;
