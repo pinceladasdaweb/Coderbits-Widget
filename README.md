@@ -24,7 +24,7 @@ user: 'bit' // Coderbits username
 ```
 
 ## Browser support
-IE9+ and modern browsers.
+IE8+ and modern browsers.
 
 ## License
 Coderbits Widget is licensed under the MIT License.
