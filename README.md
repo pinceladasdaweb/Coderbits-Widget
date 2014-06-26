@@ -3,6 +3,9 @@
 
 ![](https://raw.github.com/pinceladasdaweb/Coderbits-Widget/master/screenshot.png)
 
+## Demo
+View demo [here](http://www.pinceladasdaweb.com.br/blog/uploads/coderbits/)
+
 ## How to use?
 Coderbits Widget is a [Vanilla JS](http://vanilla-js.com/) plugin with no dependancies. Include the [`coderbits.min.js`](assets/js/coderbits.min.js) in the footer of your page and initialise it:
 
