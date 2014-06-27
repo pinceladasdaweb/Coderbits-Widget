@@ -73,24 +73,26 @@ var Coderbits = (function (window, document, undefined) {
             })
         },
         profile: function (data) {
-            var self   = this,
-                name   = document.createTextNode(data.name),
-                title  = document.createTextNode('"' + data.title + '"'),
-                avatar = 'http://www.gravatar.com/avatar/' + data.gravatar_hash,
-                header = self.create('header', {id: 'profile'}),
-                h2     = self.create('h2', {id: 'profile-username'}),
-                a      = self.create('a', {href: data.link}),
-                img    = self.create('img', {src: avatar, id: 'profile-image'}),
-                p      = self.create('p', {id: 'profile-title'});
-
-            h2.appendChild(name);
-            p.appendChild(title);
-            a.appendChild(img);
-            header.appendChild(a);
-            header.appendChild(h2);
-            header.appendChild(p);
-            
-            return header;
+          var self   = this,
+              name   = document.createTextNode(data.name),
+              title  = document.createTextNode('"' + data.title + '"'),
+              avatar = 'http://www.gravatar.com/avatar/' + data.gravatar_hash,
+              header = self.create('header', {id: 'profile'}),
+              h2     = self.create('h2', {id: 'profile-username'}),
+              link   = self.create('a', {href: data.link}),
+              website= self.create('a', {href: data.website_link}),
+              img    = self.create('img', {src: avatar, id: 'profile-image'}),
+              p      = self.create('p', {id: 'profile-title'});
+          
+          h2.appendChild(name);
+          p.appendChild(title);
+          link.appendChild(img);
+          header.appendChild(link);
+          header.appendChild(website).innerHTML = data.website_link;
+          header.appendChild(h2);
+          header.appendChild(p);
+          
+          return header;
         },
         badges: function (data) {
             var self = this,
@@ -105,27 +107,28 @@ var Coderbits = (function (window, document, undefined) {
             return a;
         },
         attach: function (data) {
-            var self      = this,
-                count     = 0,
-                div       = self.create('div', {id: 'badges'}),
-                a         = self.create('a', {id: 'more', href: data.link}),
-                t         = document.createTextNode('View all'),
-                container = document.querySelector(self.container);
+          var self = this,
+              count = 0,
+              div = self.create('div', {id: 'badges'}),
+              a = self.create('a', {id: 'more', href: data.link}),
+              t = document.createTextNode('View all'),
+              container = document.querySelector(self.container);
+          
+          container.appendChild(self.profile(data));
 
-            container.appendChild(self.profile(data));
+          self.loop(data.badges, function (badge) {
+            for(var i = 0; i < badge.earned; i++) 
+            {
+              if(badge && badge.level === 1) {
+                div.appendChild(self.badges(badge).cloneNode(true));
+                count++;
+              }
+            }
+          });
 
-            self.loop(data.badges, function (badge) {
-                if (badge.earned) {
-                    if(count < 12 && badge.level === 1) {
-                        div.appendChild(self.badges(badge).cloneNode(true));
-                        count++;
-                    }
-                }
-            });
-
-            a.appendChild(t);
-            container.appendChild(div);
-            div.appendChild(a);
+          a.appendChild(t);
+          container.appendChild(div);
+          div.appendChild(a);
         },
         init: function (config) {
             module.config(config);
